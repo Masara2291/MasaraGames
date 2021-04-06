@@ -1,0 +1,56 @@
+SCRIPT			# この行は絶対消さないこと！
+
+#------------------------------------------------------------------------------
+# 保存数
+#------------------------------------------------------------------------------
+SAVE_NUM = 3
+
+#------------------------------------------------------------------------------
+# 変更内容と変更番号
+#------------------------------------------------------------------------------
+1:DETAILSCHANGE_CHANGE_POS
+2:DETAILSCHANGE_CHANGE_LAST_POS
+3:DETAILSCHANGE_CHANGE_ROT
+4:DETAILSCHANGE_CHANGE_LAST_ROT
+5:DETAILSCHANGE_BREAK
+6:DETAILSCHANGE_CREATE
+7:DETAILSCHANGE_TOTALELIMINATION
+
+#------------------------------------------------------------------------------
+# オブジェクト番号と種類
+#------------------------------------------------------------------------------
+1:Block
+10:Enemy
+
+
+#------------------------------------------------------------------------------
+# 変更前のオブジェクト情報
+#------------------------------------------------------------------------------
+DETAILSCHANGE : 0
+	NUMBER = 10
+	DETAILSCHANGE = 5
+	OBJTYPE = 1
+	TYPE = 1
+	POS = 4860 0 7320
+	ROT = 0 0 0
+END_DETAILSCHANGE
+
+DETAILSCHANGE : 1
+	NUMBER = 23
+	DETAILSCHANGE = 5
+	OBJTYPE = 1
+	TYPE = 3
+	POS = 5776 0 7198
+	ROT = 0 0 0
+END_DETAILSCHANGE
+
+DETAILSCHANGE : 2
+	NUMBER = 22
+	DETAILSCHANGE = 5
+	OBJTYPE = 1
+	TYPE = 3
+	POS = 5237 0 8630
+	ROT = 0 0 0
+END_DETAILSCHANGE
+
+END_SCRIPT		# この行は絶対消さないこと！

@@ -1,0 +1,71 @@
+SCRIPT			# この行は絶対消さないこと！
+
+#------------------------------------------------------------------------------
+# 読み込むテクスチャ数
+#------------------------------------------------------------------------------
+NUM_TEXTURE = 0
+
+#------------------------------------------------------------------------------
+# 読み込むテクスチャファイル名
+#------------------------------------------------------------------------------
+TEXTURE_FILENAME = NULL #0
+
+#------------------------------------------------------------------------------
+# 読み込むモデル数
+#------------------------------------------------------------------------------
+NUM_MODEL = 5
+
+#------------------------------------------------------------------------------
+# 読み込むモデルファイル名
+#------------------------------------------------------------------------------
+MODEL_FILENAME = data/MODEL/enemy/ant000.x #0
+MODEL_FILENAME = data/MODEL/enemy/ant001.x #1
+MODEL_FILENAME = data/MODEL/enemy/spider000.x #2
+MODEL_FILENAME = data/MODEL/enemy/spider001.x #3
+MODEL_FILENAME = data/MODEL/enemy/UFO.x #4
+
+#------------------------------------------------------------------------------
+# オブジェクト情報を一致させる
+#------------------------------------------------------------------------------
+
+OBJECTMATCH
+	DRAW_NAME = 小蟻
+	TEXTURE_FILENAME = 0
+	MODEL_FILENAME = 0
+	TOUL_COLLISION_SIZ = 500 1650 500
+	GAME_COLLISION_SIZ = 350 200 350
+END_OBJECTMATCH
+
+OBJECTMATCH
+	DRAW_NAME = 大蟻
+	TEXTURE_FILENAME = 0
+	MODEL_FILENAME = 1
+	TOUL_COLLISION_SIZ = 500 1650 500
+	GAME_COLLISION_SIZ = 350 350 350
+END_OBJECTMATCH
+
+OBJECTMATCH
+	DRAW_NAME = 小蜘蛛
+	TEXTURE_FILENAME = 0
+	MODEL_FILENAME = 2
+	TOUL_COLLISION_SIZ = 500 1650 500
+	GAME_COLLISION_SIZ = 450 300 450
+END_OBJECTMATCH
+
+OBJECTMATCH
+	DRAW_NAME = 大蜘蛛
+	TEXTURE_FILENAME = 0
+	MODEL_FILENAME = 3
+	TOUL_COLLISION_SIZ = 500 1650 500
+	GAME_COLLISION_SIZ = 250 250 250
+END_OBJECTMATCH
+
+OBJECTMATCH
+	DRAW_NAME = UFO
+	TEXTURE_FILENAME = 0
+	MODEL_FILENAME = 4
+	TOUL_COLLISION_SIZ = 500 1650 500
+	GAME_COLLISION_SIZ = 0 150 0
+END_OBJECTMATCH
+
+END_SCRIPT		# この行は絶対消さないこと！

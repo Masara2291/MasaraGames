@@ -1,0 +1,153 @@
+SCRIPT			# この行は絶対消さないこと！
+
+#------------------------------------------------------------------------------
+# 読み込むモデル数
+#------------------------------------------------------------------------------
+NUM_MODEL = 22
+
+#------------------------------------------------------------------------------
+# マップサイズ
+#------------------------------------------------------------------------------
+MAP_SIZ = 65 65
+
+#------------------------------------------------------------------------------
+# 読み込むモデルファイル名
+#------------------------------------------------------------------------------
+
+
+#------------------------------------------------------------------------------
+# 表示するモデルの配置情報
+#------------------------------------------------------------------------------
+MODELSET
+	TYPE = 0
+	POS = 0 0 800
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 0 0 1600
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 2
+	POS = 0 0 2400
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 3
+	POS = 0 0 3200
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 4
+	POS = 0 0 4000
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 5
+	POS = 0 0 4800
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 6
+	POS = 3200 0 2400
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 7
+	POS = 800 0 2400
+	ROT = 0 180 0
+END_MODELSET
+
+MODELSET
+	TYPE = 8
+	POS = 150 0 400
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 0
+	POS = 0 0 0
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 27
+	POS = 3847 0 2165
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 27
+	POS = 3918 0 1148
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 27
+	POS = 6499 0 3829
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 4860 0 7320
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 3
+	POS = 5318 0 8842
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 4
+	POS = 7281 0 10135
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 6331 0 10187
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 25
+	POS = 3172 0 8492
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 0
+	POS = 2566 0 9197
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 0
+	POS = 1527 0 10360
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 1122 0 11695
+	ROT = 0 0 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 1854 0 12362
+	ROT = 0 0 0
+END_MODELSET
+
+END_SCRIPT		# この行は絶対消さないこと！

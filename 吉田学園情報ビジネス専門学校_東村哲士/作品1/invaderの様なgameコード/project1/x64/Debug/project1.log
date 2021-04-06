@@ -1,0 +1,77 @@
+﻿  title.cpp
+  tcp_client.cpp
+  sound.cpp
+  score.cpp
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\score.cpp(54): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\score.cpp(110): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\score.cpp(122): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  scene2D.cpp
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\scene2d.cpp(184): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  result.cpp
+  renderer.cpp
+  ranking.cpp
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\ranking.cpp(153): warning C4267: '引数': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  player.cpp
+  object.cpp
+  number.cpp
+  message.cpp
+  math.cpp
+  manager.cpp
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\manager.cpp(166): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+  main.cpp
+  keybod.cpp
+  InputMouse.cpp
+  input.cpp
+  explosion.cpp
+  enemy.cpp
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\enemy.cpp(52): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  コードを生成中...
+  コンパイル中...
+  CreateStage.cpp
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\createstage.cpp(64): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\createstage.cpp(92): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\createstage.cpp(103): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\createstage.cpp(104): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\createstage.cpp(276): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  bullet.cpp
+  boss.cpp
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\boss.cpp(54): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\boss.cpp(65): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\boss.cpp(68): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\boss.cpp(87): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\boss.cpp(87): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\boss.cpp(106): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\boss.cpp(114): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\boss.cpp(114): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\boss.cpp(133): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+  bg.cpp
+  animal.cpp
+c:\users\gsp028\desktop\就職活動\masaragames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\project1\animal.cpp(181): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+  コードを生成中...
+player.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+ranking.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+result.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+title.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+enemy.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+explosion.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+message.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+number.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+bg.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+boss.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+bullet.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+CreateStage.obj : error LNK2001: 外部シンボル "D3DXCreateTextureFromFileA" は未解決です。
+InputMouse.obj : error LNK2019: 未解決の外部シンボル DirectInput8Create が関数 "public: virtual long __cdecl CMouse::Init(struct HINSTANCE__ *,struct HWND__ *)" (?Init@CMouse@@UEAAJPEAUHINSTANCE__@@PEAUHWND__@@@Z) で参照されました。
+keybod.obj : error LNK2001: 外部シンボル "DirectInput8Create" は未解決です。
+InputMouse.obj : error LNK2001: 外部シンボル "IID_IDirectInput8A" は未解決です。
+keybod.obj : error LNK2001: 外部シンボル "IID_IDirectInput8A" は未解決です。
+InputMouse.obj : error LNK2001: 外部シンボル "GUID_SysMouse" は未解決です。
+InputMouse.obj : error LNK2001: 外部シンボル "c_dfDIMouse2" は未解決です。
+keybod.obj : error LNK2001: 外部シンボル "GUID_SysKeyboard" は未解決です。
+keybod.obj : error LNK2001: 外部シンボル "c_dfDIKeyboard" は未解決です。
+renderer.obj : error LNK2019: 未解決の外部シンボル Direct3DCreate9 が関数 "public: long __cdecl CRenderere::Init(struct HWND__ *,bool)" (?Init@CRenderere@@QEAAJPEAUHWND__@@_N@Z) で参照されました。
+renderer.obj : error LNK2019: 未解決の外部シンボル D3DXCreateFontA が関数 "public: long __cdecl CRenderere::Init(struct HWND__ *,bool)" (?Init@CRenderere@@QEAAJPEAUHWND__@@_N@Z) で参照されました。
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\d3d9.lib : warning LNK4272: ライブラリのコンピューターの種類 'X86' がターゲットのコンピューターの種類' x64' と競合しています
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\d3dx9.lib : warning LNK4272: ライブラリのコンピューターの種類 'X86' がターゲットのコンピューターの種類' x64' と競合しています
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\dxguid.lib : warning LNK4272: ライブラリのコンピューターの種類 'X86' がターゲットのコンピューターの種類' x64' と競合しています
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\dinput8.lib : warning LNK4272: ライブラリのコンピューターの種類 'X86' がターゲットのコンピューターの種類' x64' と競合しています
+C:\Users\gsp028\Desktop\就職活動\MasaraGames\吉田学園情報ビジネス専門学校_東村哲士\作品1\invaderの様なgameコード\x64\Debug\project1.exe : fatal error LNK1120: 9 件の未解決の外部参照
