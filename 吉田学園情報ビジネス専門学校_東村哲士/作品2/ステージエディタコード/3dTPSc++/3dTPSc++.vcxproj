@@ -151,7 +151,7 @@
     <ClCompile Include="billboard.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="camera.cpp" />
-    <ClCompile Include="CreateStage.cpp" />
+    <ClCompile Include="createstage.cpp" />
     <ClCompile Include="effect3d.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="fade.cpp" />
@@ -169,12 +169,13 @@
     <ClCompile Include="scene2d.cpp" />
     <ClCompile Include="scene3d.cpp" />
     <ClCompile Include="tile.cpp" />
+    <ClCompile Include="ui.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="billboard.h" />
     <ClInclude Include="block.h" />
     <ClInclude Include="camera.h" />
-    <ClInclude Include="CreateStage.h" />
+    <ClInclude Include="createstage.h" />
     <ClInclude Include="effect3d.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="fade.h" />
@@ -192,6 +193,7 @@
     <ClInclude Include="scene2d.h" />
     <ClInclude Include="scene3d.h" />
     <ClInclude Include="tile.h" />
+    <ClInclude Include="ui.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

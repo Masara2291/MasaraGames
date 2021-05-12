@@ -17,7 +17,8 @@
 #include "library.h"
 #include "effect3d.h"
 #include "field.h"
-#include "CreateStage.h"
+#include "createstage.h"
+#include "ui.h"
 
 //========================================
 // マクロ定義
@@ -84,6 +85,9 @@ HRESULT CGame::Init(void)
 
     // カメラのロックオン場所
     CCamera::SetCameraLookAt(D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+
+	CUi::LoadTexture();
+	CUi::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 0));
 
     return S_OK;
 }

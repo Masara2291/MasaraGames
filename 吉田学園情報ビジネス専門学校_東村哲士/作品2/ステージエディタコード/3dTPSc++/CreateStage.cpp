@@ -1,5 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 
+//===============================================
+//
+// ステージ制作処理 (createstage.cpp)
+// Author : 東村哲士
+//
+//===============================================
+
 #include "CreateStage.h"
 
 #include "block.h"
@@ -9,6 +16,9 @@
 #include "effect3d.h"
 #include "library.h"
 
+//========================================
+// 静的メンバ変数宣言
+//========================================
 bool CCreateStage::m_bFixedSshaft[2]                                           = { false, false };
 bool CCreateStage::m_bGreaseJudge                                              = false;
 bool CCreateStage::m_bSaveJudge                                                = false;

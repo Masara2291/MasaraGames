@@ -76,9 +76,10 @@ public:
 	// オブジェクト情報
 	typedef struct
 	{
-		char ModelPath[256];
-		char TexturePath[256];
-		char DrawName[256];
+		char cModelPath[256];
+		char cTexturePath[256];
+		char cDrawName[256];
+		char cJaneImagename[256];
 		TYPE Type;
 		D3DXVECTOR3 Game_Collision_Siz;
 		D3DXVECTOR3 Toul_Collision_Siz;
@@ -107,7 +108,7 @@ public:
 	static int GetBlockNumAll(void) { return m_nNumAll; }
 	int GetNumber(void) { return m_nNumber; }
 
-	static HRESULT SetBlockData(char* ModelPath, char* TexturePath, char* DrawName, TYPE Type, D3DXVECTOR3 Game_Collision_Siz, D3DXVECTOR3 Toul_Collision_Siz, int nNum, bool bUseJudge);
+	static HRESULT SetBlockData(char* cModelPath, char* cTexturePath, char* cDrawName, char* cJaneImagename, TYPE Type, D3DXVECTOR3 Game_Collision_Siz, D3DXVECTOR3 Toul_Collision_Siz, int nNum, bool bUseJudge);
 
 private:
     static LPDIRECT3DTEXTURE9		m_apTexture[TYPE_MAX];    // 読み込むテクスチャ
@@ -119,6 +120,7 @@ private:
 	static BLOCKDATA m_aBlockData[TYPE_MAX];                  // オブジェクトの情報
 	static char m_cTextureName[TYPE_MAX][256];                // テクスチャパス保管用変数
 	static char m_cModelName[TYPE_MAX][256];                  // モデルパス保管用変数
+	static char m_cJaneImageNumber[TYPE_MAX][256];            // オブジェクト簡易表示時の画像名
 
     D3DXVECTOR3 m_collisionSize;                              // 当たり判定の大きさ
     bool m_bWallRun;                                          // 壁走りできるかどうか

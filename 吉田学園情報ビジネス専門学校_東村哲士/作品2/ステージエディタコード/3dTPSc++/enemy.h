@@ -77,9 +77,9 @@ public:
 	// オブジェクト情報
 	typedef struct
 	{
-		char ModelPath[256];
-		char TexturePath[256];
-		char DrawName[256];
+		char cModelPath[256];
+		char cTexturePath[256];
+		char cDrawName[256];
 		TYPE Type;
 		D3DXVECTOR3 Game_Collision_Siz;
 		D3DXVECTOR3 Toul_Collision_Siz;
@@ -108,7 +108,7 @@ public:
 	static int GetEnemyNumAll(void) { return m_nNumAll; }
 	int GetNumber(void) { return m_nNumber; }
 
-	static HRESULT SetEnemyData(char* ModelPath, char* TexturePath, char* DrawName, TYPE Type, D3DXVECTOR3 Game_Collision_Siz, D3DXVECTOR3 Toul_Collision_Siz, int nNum, bool bUseJudge);
+	static HRESULT SetEnemyData(char* cModelPath, char* cTexturePath, char* cDrawName, TYPE Type, D3DXVECTOR3 Game_Collision_Siz, D3DXVECTOR3 Toul_Collision_Siz, int nNum, bool bUseJudge);
 
 private:
 	static LPDIRECT3DTEXTURE9		m_apTexture[TYPE_MAX];  // 読み込むテクスチャ

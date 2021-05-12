@@ -3,7 +3,7 @@
 //===============================================
 //
 // フィールド処理 (block.cpp)
-// Author : 樋宮匠
+// Author : 東村哲士
 //
 //===============================================
 
@@ -25,6 +25,7 @@ LPDIRECT3DTEXTURE9 CBlock::m_apTexture[CBlock::TYPE_MAX] = {};
 CBlock::BLOCKDATA CBlock::m_aBlockData[TYPE_MAX]         = {};
 char CBlock::m_cTextureName[TYPE_MAX][256]               = {};
 char CBlock::m_cModelName[TYPE_MAX][256]                 = {};
+char CBlock::m_cJaneImageNumber[TYPE_MAX][256]           = {};
 
 CBlock* CBlock::m_pSelectBlock = NULL;
 int CBlock::m_nNumAll          = 0;
@@ -128,10 +129,10 @@ HRESULT CBlock::Load(void)
 
 	for (int nCount = 0; nCount < TYPE_MAX; nCount++) {
 		if (m_aBlockData[nCount].bUseJudge == true) {
-			D3DXLoadMeshFromX(LPCSTR(m_aBlockData[nCount].ModelPath), D3DXMESH_SYSTEMMEM, pDevice, NULL, &m_apBuffMat[m_aBlockData[nCount].Type], NULL, &m_aNumMat[m_aBlockData[nCount].Type], &m_apMesh[m_aBlockData[nCount].Type]);
+			D3DXLoadMeshFromX(LPCSTR(m_aBlockData[nCount].cModelPath), D3DXMESH_SYSTEMMEM, pDevice, NULL, &m_apBuffMat[m_aBlockData[nCount].Type], NULL, &m_aNumMat[m_aBlockData[nCount].Type], &m_apMesh[m_aBlockData[nCount].Type]);
 
-			if (strcmp(m_aBlockData[nCount].TexturePath, "NULL") != 0 && strcmp(m_aBlockData[nCount].TexturePath, " ") != 0) {
-				D3DXCreateTextureFromFile(pDevice, m_aBlockData[nCount].TexturePath, &m_apTexture[m_aBlockData[nCount].Type]);
+			if (strcmp(m_aBlockData[nCount].cTexturePath, "NULL") != 0 && strcmp(m_aBlockData[nCount].cTexturePath, " ") != 0) {
+				D3DXCreateTextureFromFile(pDevice, m_aBlockData[nCount].cTexturePath, &m_apTexture[m_aBlockData[nCount].Type]);
 			}
 		}
 	}
@@ -172,6 +173,7 @@ void CBlock::LoadTxt(void)
     int nCntLoad = 0;
     int nTextureCount = 0;
 	int nModelCount = 0;
+	int nJaneNameCount = 0;
     char cReedText[128];    // 文字として読み取り用
     char cHeadText[256];    //
     char cDie[128];
@@ -179,6 +181,7 @@ void CBlock::LoadTxt(void)
     // デバッグ用の変数
     char cDrawName[TYPE_MAX][256];
     char cTextureNumber[TYPE_MAX][256];
+	char cJaneImageNumber[TYPE_MAX][256];
     int nModelNumber[TYPE_MAX];
     D3DXVECTOR3 Game_Collision_Siz[TYPE_MAX];
     D3DXVECTOR3 Toul_Collision_Siz[TYPE_MAX];
@@ -203,6 +206,12 @@ void CBlock::LoadTxt(void)
 
 				nModelCount++;
             }
+
+			if (strcmp(cHeadText, "JANE_IMAGENAME") == 0) {
+				sscanf(cReedText, "%s %s %s", &cDie, &cDie, &m_cJaneImageNumber[nJaneNameCount][0]);
+
+				nJaneNameCount++;
+			}
         }
 
         if(strcmp(cHeadText, "OBJECTMATCH") == 0) {
@@ -224,17 +233,22 @@ void CBlock::LoadTxt(void)
                     if(strcmp(cHeadText, "MODEL_FILENAME") == 0) {
                         sscanf(cReedText, "%s %s %d", &cDie, &cDie, &nModelNumber[nCntLoad]);
                     }
+
                     if(strcmp(cHeadText, "TOUL_COLLISION_SIZ") == 0) {
                         sscanf(cReedText, "%s %s %f %f %f", &cDie, &cDie, &Toul_Collision_Siz[nCntLoad].x, &Toul_Collision_Siz[nCntLoad].y, &Toul_Collision_Siz[nCntLoad].z);
                     }
 
                     if(strcmp(cHeadText, "GAME_COLLISION_SIZ") == 0) {
                         sscanf(cReedText, "%s %s %f %f %f", &cDie, &cDie, &Game_Collision_Siz[nCntLoad].x, &Game_Collision_Siz[nCntLoad].y, &Game_Collision_Siz[nCntLoad].z);
-
-                        SetBlockData(&m_cModelName[nModelNumber[nCntLoad]][0], &m_cTextureName[atoi(cTextureNumber[nCntLoad])][0], &cDrawName[nCntLoad][0], (TYPE)nCntLoad, Game_Collision_Siz[nCntLoad], Toul_Collision_Siz[nCntLoad], nCntLoad, true);
-
-                        nCntLoad++;
                     }
+
+					if (strcmp(cHeadText, "JANE_IMAGENAME") == 0) {
+						sscanf(cReedText, "%s %s %s", &cDie, &cDie, &cJaneImageNumber[nCntLoad][0]);
+
+						SetBlockData(&m_cModelName[nModelNumber[nCntLoad]][0], &m_cTextureName[atoi(cTextureNumber[nCntLoad])][0], &cDrawName[nCntLoad][0], &m_cJaneImageNumber[atoi(cJaneImageNumber[nCntLoad])][0], (TYPE)nCntLoad, Game_Collision_Siz[nCntLoad], Toul_Collision_Siz[nCntLoad], nCntLoad, true);
+
+						nCntLoad++;
+					}
                 }
             }
         }
@@ -265,20 +279,21 @@ CBlock* CBlock::Create(D3DXVECTOR3 pos, D3DXVECTOR3 rot, int nType)
 //=============================================================================
 // テキストファイルから読み取った情報を保持する
 //=============================================================================
-HRESULT CBlock::SetBlockData(char* ModelPath, char* TexturePath, char* DrawName, TYPE Type, D3DXVECTOR3 Game_Collision_Siz, D3DXVECTOR3 Toul_Collision_Siz, int nNum, bool bUseJudge)
+HRESULT CBlock::SetBlockData(char* cModelPath, char* cTexturePath, char* cDrawName, char* cJaneImagename, TYPE Type, D3DXVECTOR3 Game_Collision_Siz, D3DXVECTOR3 Toul_Collision_Siz, int nNum, bool bUseJudge)
 {
-	strcpy(m_aBlockData[nNum].ModelPath, ModelPath);
-	if (strcmp(TexturePath, "NULL") != 0 && strcmp(TexturePath, " ") != 0 && strcmp(TexturePath, "0") != 0) {
-		strcpy(m_aBlockData[nNum].TexturePath, TexturePath);
+	strcpy(m_aBlockData[nNum].cModelPath, cModelPath);
+	if (strcmp(cTexturePath, "NULL") != 0 && strcmp(cTexturePath, " ") != 0 && strcmp(cTexturePath, "0") != 0) {
+		strcpy(m_aBlockData[nNum].cTexturePath, cTexturePath);
 	}
-	strcpy(m_aBlockData[nNum].DrawName, DrawName);
+	strcpy(m_aBlockData[nNum].cDrawName, cDrawName);
+	strcpy(m_aBlockData[nNum].cJaneImagename, cJaneImagename);
     m_aBlockData[nNum].Type               = Type;
     m_aBlockData[nNum].Game_Collision_Siz = Game_Collision_Siz;
     m_aBlockData[nNum].Toul_Collision_Siz = Toul_Collision_Siz;
 	m_aBlockData[nNum].bUseJudge          = false;
 
-    if(strcmp(m_aBlockData[nNum].ModelPath, ModelPath) == 0 && strcmp(m_aBlockData[nNum].TexturePath, TexturePath) == 0 ||
-		strcmp(m_aBlockData[nNum].ModelPath, ModelPath) == 0 && strcmp(m_aBlockData[nNum].TexturePath, "NULL") != 0 || strcmp(m_aBlockData[nNum].TexturePath, " ") != 0) {
+    if(strcmp(m_aBlockData[nNum].cModelPath, cModelPath) == 0 && strcmp(m_aBlockData[nNum].cTexturePath, cTexturePath) == 0 ||
+		strcmp(m_aBlockData[nNum].cModelPath, cModelPath) == 0 && strcmp(m_aBlockData[nNum].cTexturePath, "NULL") != 0 || strcmp(m_aBlockData[nNum].cTexturePath, " ") != 0) {
 		m_aBlockData[nNum].bUseJudge = bUseJudge;
 
         return S_OK;

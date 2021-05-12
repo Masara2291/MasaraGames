@@ -2,8 +2,8 @@
 
 //===============================================
 //
-// フィールド処理 (block.cpp)
-// Author : 樋宮匠
+// フィールド処理 (enemy.cpp)
+// Author : 東村哲士
 //
 //===============================================
 
@@ -128,10 +128,10 @@ HRESULT CEnemy::Load(void)
 
 	for (int nCount = 0; nCount < TYPE_MAX; nCount++) {
 		if (m_aEnemyData[nCount].bUseJudge == true) {
-			D3DXLoadMeshFromX(LPCSTR(m_aEnemyData[nCount].ModelPath), D3DXMESH_SYSTEMMEM, pDevice, NULL, &m_apBuffMat[m_aEnemyData[nCount].Type], NULL, &m_aNumMat[m_aEnemyData[nCount].Type], &m_apMesh[m_aEnemyData[nCount].Type]);
+			D3DXLoadMeshFromX(LPCSTR(m_aEnemyData[nCount].cModelPath), D3DXMESH_SYSTEMMEM, pDevice, NULL, &m_apBuffMat[m_aEnemyData[nCount].Type], NULL, &m_aNumMat[m_aEnemyData[nCount].Type], &m_apMesh[m_aEnemyData[nCount].Type]);
 
-			if (strcmp(m_aEnemyData[nCount].TexturePath, "NULL") != 0 && strcmp(m_aEnemyData[nCount].TexturePath, " ") != 0) {
-				D3DXCreateTextureFromFile(pDevice, m_aEnemyData[nCount].TexturePath, &m_apTexture[m_aEnemyData[nCount].Type]);
+			if (strcmp(m_aEnemyData[nCount].cTexturePath, "NULL") != 0 && strcmp(m_aEnemyData[nCount].cTexturePath, " ") != 0) {
+				D3DXCreateTextureFromFile(pDevice, m_aEnemyData[nCount].cTexturePath, &m_apTexture[m_aEnemyData[nCount].Type]);
 			}
 		}
 	}
@@ -265,20 +265,20 @@ CEnemy* CEnemy::Create(D3DXVECTOR3 pos, D3DXVECTOR3 rot, int nType)
 //=============================================================================
 // テキストファイルから読み取った情報を保持する
 //=============================================================================
-HRESULT CEnemy::SetEnemyData(char* ModelPath, char* TexturePath, char* DrawName, TYPE Type, D3DXVECTOR3 Game_Collision_Siz, D3DXVECTOR3 Toul_Collision_Siz, int nNum, bool bUseJudge)
+HRESULT CEnemy::SetEnemyData(char* cModelPath, char* cTexturePath, char* cDrawName, TYPE Type, D3DXVECTOR3 Game_Collision_Siz, D3DXVECTOR3 Toul_Collision_Siz, int nNum, bool bUseJudge)
 {
-	strcpy(m_aEnemyData[nNum].ModelPath, ModelPath);
-	if (strcmp(TexturePath, "NULL") != 0 && strcmp(TexturePath, " ") != 0 && strcmp(TexturePath, "0") != 0) {
-		strcpy(m_aEnemyData[nNum].TexturePath, TexturePath);
+	strcpy(m_aEnemyData[nNum].cModelPath, cModelPath);
+	if (strcmp(cTexturePath, "NULL") != 0 && strcmp(cTexturePath, " ") != 0 && strcmp(cTexturePath, "0") != 0) {
+		strcpy(m_aEnemyData[nNum].cTexturePath, cTexturePath);
 	}
-	strcpy(m_aEnemyData[nNum].DrawName, DrawName);
+	strcpy(m_aEnemyData[nNum].cDrawName, cDrawName);
 	m_aEnemyData[nNum].Type = Type;
 	m_aEnemyData[nNum].Game_Collision_Siz = Game_Collision_Siz;
 	m_aEnemyData[nNum].Toul_Collision_Siz = Toul_Collision_Siz;
 	m_aEnemyData[nNum].bUseJudge = false;
 
-	if (strcmp(m_aEnemyData[nNum].ModelPath, ModelPath) == 0 && strcmp(m_aEnemyData[nNum].TexturePath, TexturePath) == 0 ||
-		strcmp(m_aEnemyData[nNum].ModelPath, ModelPath) == 0 && strcmp(m_aEnemyData[nNum].TexturePath, "NULL") != 0 || strcmp(m_aEnemyData[nNum].TexturePath, " ") != 0) {
+	if (strcmp(m_aEnemyData[nNum].cModelPath, cModelPath) == 0 && strcmp(m_aEnemyData[nNum].cTexturePath, cTexturePath) == 0 ||
+		strcmp(m_aEnemyData[nNum].cModelPath, cModelPath) == 0 && strcmp(m_aEnemyData[nNum].cTexturePath, "NULL") != 0 || strcmp(m_aEnemyData[nNum].cTexturePath, " ") != 0) {
 		m_aEnemyData[nNum].bUseJudge = bUseJudge;
 
 		return S_OK;

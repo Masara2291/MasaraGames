@@ -139,7 +139,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             {// 1/60秒経過
                 dwExecLastTime = dwCurrentTime;	// 現在の時間を保存
 
-                pManager->Update();
+				// ツールがアクティブウィンドウ状態の時、更新処理を行う
+				if (GetForegroundWindow() == hWnd) {
+					pManager->Update();
+				}
 
                 pManager->Draw();
 

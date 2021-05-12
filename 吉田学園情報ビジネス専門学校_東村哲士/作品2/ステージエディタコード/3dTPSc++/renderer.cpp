@@ -70,7 +70,7 @@ HRESULT CRenderer::Init(HWND hWnd, bool bWindow)
     d3dpp.BackBufferFormat = d3ddm.Format;				// カラーモードの指定
     d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;		// 映像信号に同期してフリップする
     d3dpp.EnableAutoDepthStencil = TRUE;						// デプスバッファ（Ｚバッファ）とステンシルバッファを作成
-    d3dpp.AutoDepthStencilFormat = D3DFMT_D16;					// デプスバッファとして16bitを使う
+    d3dpp.AutoDepthStencilFormat = D3DFMT_D24S8;					// デプスバッファとして16bitを使う
     d3dpp.Windowed = bWindow;						// ウィンドウモード
     d3dpp.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;		// リフレッシュレート
     d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_DEFAULT;	// インターバル
@@ -114,18 +114,18 @@ HRESULT CRenderer::Init(HWND hWnd, bool bWindow)
     m_pD3DDevice->SetRenderState(D3DRS_LIGHTING, TRUE);                 // カメラを使用する
     m_pD3DDevice->SetRenderState(D3DRS_AMBIENT, 0x00444444);            // アンビエントの設定
 
-                                                                        // サンプラーステートの設定
+    // サンプラーステートの設定
     m_pD3DDevice->SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);   // テクスチャU値の繰り返し設定
     m_pD3DDevice->SetSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);   // テクスチャV値の繰り返し設定
     m_pD3DDevice->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);    // テクスチャ拡大時の補間設定
     m_pD3DDevice->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);    // テクスチャ縮小時の補間設定
 
-                                                                            // テクスチャステージステートの設定
+    // テクスチャステージステートの設定
     m_pD3DDevice->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE); // アルファブレンディング処理
     m_pD3DDevice->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE); // 最初のアルファ引数(初期値)
     m_pD3DDevice->SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_CURRENT); // 2番目のアルファ引数(初期値)
 
-                                                                            // マテリアルの設定
+    // マテリアルの設定
     ZeroMemory(&material, sizeof(D3DMATERIAL9));
     material.Ambient.r = 1.0f;
     material.Ambient.g = 1.0f;
@@ -199,17 +199,17 @@ void CRenderer::Draw(void)
         // FPS表示
         DrawFPS();
 #endif
-		DrawPosRAndSelectType();
-		DrawBlockPos();
-		DrawEnemyPos();
-		DrawCursorPos();
-		DrawFixedSshaft();
-		DrawGreaseJudge();
-		DrawSeveMapJudge();
-		DrawCopyDate();
-		DrawCreateObjectType();
-		DrawPauseJudge();
-		DrawObjectSaveDate();
+		//DrawPosRAndSelectType();
+		//DrawBlockPos();
+		//DrawEnemyPos();
+		//DrawCursorPos();
+		//DrawFixedSshaft();
+		//DrawGreaseJudge();
+		//DrawSeveMapJudge();
+		//DrawCopyDate();
+		//DrawCreateObjectType();
+		//DrawPauseJudge();
+		//DrawObjectSaveDate();
 
         // Direct3Dによる描画の終了
         m_pD3DDevice->EndScene();
@@ -243,10 +243,10 @@ void CRenderer::DrawPosRAndSelectType(void) {
 	char str[BYTE];
 
 	if (CCreateStage::GetCreateObject() == CCreateStage::CREATEOBJECT_STAGE) {
-		wsprintf(str, "posR.x:%d posR.y:%d posR.z:%d SelectName:%s\n", (int)CCamera::GetCameraposR().x, 0, (int)CCamera::GetCameraposR().z, CBlock::GetBlockData(CCreateStage::GetBlockType()).DrawName);
+		wsprintf(str, "posR.x:%d posR.y:%d posR.z:%d SelectName:%s\n", (int)CCamera::GetCameraposR().x, 0, (int)CCamera::GetCameraposR().z, CBlock::GetBlockData(CCreateStage::GetBlockType()).cDrawName);
 	}
 	if (CCreateStage::GetCreateObject() == CCreateStage::CREATEOBJECT_ENEMY) {
-		wsprintf(str, "posR.x:%d posR.y:%d posR.z:%d SelectName:%s\n", (int)CCamera::GetCameraposR().x, 0, (int)CCamera::GetCameraposR().z, CEnemy::GetEnemyData(CCreateStage::GetEnemyType()).DrawName);
+		wsprintf(str, "posR.x:%d posR.y:%d posR.z:%d SelectName:%s\n", (int)CCamera::GetCameraposR().x, 0, (int)CCamera::GetCameraposR().z, CEnemy::GetEnemyData(CCreateStage::GetEnemyType()).cDrawName);
 	}
 
 	// テキスト描画
@@ -318,12 +318,12 @@ void CRenderer::DrawCopyDate(void) {
 		case CCreateStage::CREATEOBJECT_STAGE:
 			wsprintf(str002, "Stage\n");
 
-			wsprintf(str001, "Copypos.y:%d CopyRot.x:%d CopyRot.y:%d CopyRot.z:%d CopynName:%s ObjectType:%s\n", (int)CCreateStage::GetCopyPos().y, (int)D3DXToDegree(CCreateStage::GetCopyPosR().x), (int)D3DXToDegree(CCreateStage::GetCopyPosR().y), (int)D3DXToDegree(CCreateStage::GetCopyPosR().z), CBlock::GetBlockData(CCreateStage::GetCopyType()).DrawName, str002);
+			wsprintf(str001, "Copypos.y:%d CopyRot.x:%d CopyRot.y:%d CopyRot.z:%d CopynName:%s ObjectType:%s\n", (int)CCreateStage::GetCopyPos().y, (int)D3DXToDegree(CCreateStage::GetCopyPosR().x), (int)D3DXToDegree(CCreateStage::GetCopyPosR().y), (int)D3DXToDegree(CCreateStage::GetCopyPosR().z), CBlock::GetBlockData(CCreateStage::GetCopyType()).cDrawName, str002);
 			break;
 		case CCreateStage::CREATEOBJECT_ENEMY:
 			wsprintf(str002, "Enemy\n");
 
-			wsprintf(str001, "Copypos.y:%d CopyRot.x:%d CopyRot.y:%d CopyRot.z:%d CopynName:%s ObjectType:%s\n", (int)CCreateStage::GetCopyPos().y, (int)D3DXToDegree(CCreateStage::GetCopyPosR().x), (int)D3DXToDegree(CCreateStage::GetCopyPosR().y), (int)D3DXToDegree(CCreateStage::GetCopyPosR().z), CEnemy::GetEnemyData(CCreateStage::GetCopyType()).DrawName, str002);
+			wsprintf(str001, "Copypos.y:%d CopyRot.x:%d CopyRot.y:%d CopyRot.z:%d CopynName:%s ObjectType:%s\n", (int)CCreateStage::GetCopyPos().y, (int)D3DXToDegree(CCreateStage::GetCopyPosR().x), (int)D3DXToDegree(CCreateStage::GetCopyPosR().y), (int)D3DXToDegree(CCreateStage::GetCopyPosR().z), CEnemy::GetEnemyData(CCreateStage::GetCopyType()).cDrawName, str002);
 			break;
 		}
 

@@ -1,5 +1,5 @@
 START
-	Block = data/TXT/TestStage.txt
-	Enemy = data/TXT/TestEnemy.txt
+	Block = data/TXT/blockstage1.txt
+	Enemy = data/TXT/enemystage1.txt
 	Map = data/MAPS/CSV/Map_001.csv
 END

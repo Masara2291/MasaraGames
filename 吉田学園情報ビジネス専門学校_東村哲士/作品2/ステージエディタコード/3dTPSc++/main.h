@@ -24,9 +24,9 @@
 #pragma comment(lib, "d3d9.lib")    // 描画処理に必要
 #pragma comment(lib, "d3dx9.lib")   // 拡張ライブラリ
 #pragma comment(lib, "dxguid.lib")  // コンポーネント使用に必要
-#pragma comment(lib,"dinput8.lib")  // 入力処理に必要
-#pragma comment(lib,"winmm.lib")
-#pragma comment(lib,"ws2_32.lib")
+#pragma comment(lib, "dinput8.lib")  // 入力処理に必要
+#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "ws2_32.lib")
 
 //*****************************************************************************
 // マクロ定義

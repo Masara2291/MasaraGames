@@ -1,6 +1,6 @@
 //===============================================
 //
-// ŒõŒ¹ˆ— (light.cpp)
+// ŒõŒ¹ˆ— (camera.cpp)
 // Author : ”ó‹{ 
 //
 //===============================================
@@ -25,9 +25,6 @@
 D3DXVECTOR3 CCamera::m_posRDest        = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 D3DXVECTOR3 CCamera::m_posVDest        = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 CCamera::CAMERA_STATE CCamera::m_state = CCamera::CAMERA_NORMAL;
-float CCamera::m_fR                    = CAMERA_OFFSET;
-float CCamera::m_fƒ³                    = 0;
-float CCamera::m_fƒÆ                    = 0;
 
 D3DXVECTOR3 CCamera::m_posR = D3DXVECTOR3(0, 0, 0);
 
@@ -40,10 +37,6 @@ CCamera::CCamera()
     D3DXMatrixIdentity(&m_mtxProjection);
     m_pos         = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
     m_state       = CAMERA_NORMAL;
-    m_fR          = CAMERA_OFFSET;
-    m_fƒ³          = 1;
-    m_fƒÆ          = 1;
-    m_nCountState = 0;
 }
 
 //=============================================================================
@@ -71,10 +64,6 @@ HRESULT CCamera::Init(void)
     m_StartMousePos  = D3DXVECTOR3(Point.x, Point.y, 0.0f);
     m_AmountMovement = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
     m_state          = CAMERA_NORMAL;
-    m_fR             = CAMERA_OFFSET;
-    m_fƒ³             = 1;
-    m_fƒÆ             = 1;
-    m_nCountState    = 0;
 
     D3DXMatrixLookAtLH(&m_mtxView, &m_posV, &m_posR, &m_vecU);
     pDevice->SetTransform(D3DTS_VIEW, &m_mtxView);

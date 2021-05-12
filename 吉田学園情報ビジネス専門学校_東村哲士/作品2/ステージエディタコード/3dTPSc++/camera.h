@@ -83,10 +83,6 @@ private:
 	MOUSEWHEEL          m_MouseWheel;
     D3DXMATRIX			m_mtxProjection;
     D3DXMATRIX			m_mtxView;
-    static float		m_fR;
-    static float		m_fƒ³;
-    static float		m_fƒÆ;
-    int					m_nCountState;
 };
 
 #endif
